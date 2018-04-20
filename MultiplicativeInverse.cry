@@ -1,0 +1,17 @@
+import Chandan::utilities
+
+findTrue rems m i = n
+  where
+    n = if rems @ i == 1 then i+1
+        | i <= m then findTrue rems m (i+1)
+        else error "Inverse not found"
+
+
+MultiplicativeInverse v (m:[128]) = n
+  where
+    n = if coprime then 
+          findTrue rems m 0
+        else 
+          error "Not co-primes"
+    rems = [ (i*v) % m | i <- [1 ... ] ]
+    coprime = gcd(v, m) == 1

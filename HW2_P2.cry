@@ -1,0 +1,22 @@
+/* Linear Feedback Shift Registers */
+
+seq_2_8_1 = [0, 0, 0, 1] # new
+    where new = [a ^ b | a <- seq_2_8_1
+                       | b <- drop`{1} seq_2_8_1]
+
+/* take`{64}(seq_2_8_1:[_][4]) */
+
+seq_2_8_2 = [0, 0, 0, 1] # new
+    where new = [a ^ b | a <- seq_2_8_2
+                       | b <- drop`{2} seq_2_8_2]
+
+/* groupBy`{4} (take`{30} (seq_2_8_2:[_][4])) */
+
+seq_2_8_3 = [0, 0, 0, 1] # new
+    where new = [a ^ b ^ c ^ d| a <- seq_2_8_3
+                              | b <- drop`{1} seq_2_8_3
+                              | c <- drop`{2} seq_2_8_3
+                              | d <- drop`{3} seq_2_8_3
+                ]
+
+/* take`{64}(seq_2_8_3:[_][4]) */

@@ -1,0 +1,5 @@
+gcd : [8] -> [8] -> [8]
+gcd a b = if(b == 0) then a
+          else gcd b (a%b)
+
+property proveGCD l r = gcd l r == gcd r l

@@ -1,0 +1,18 @@
+/* increment: [8] -> [8] */
+increment x = x + 1
+
+/*
+
+increment 3
+increment 255
+increment 256
+
+*/
+
+/*
+Gotcha...
+increment -2
+increment(-2)
+*/
+
+property incrementCorrect x = increment x == x + 1

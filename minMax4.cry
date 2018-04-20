@@ -1,0 +1,7 @@
+minMax4 : {a} (Cmp a) => [4]a -> (a, a)
+
+minMax4 [a,b,c,d] = (mn, mx) 
+    where mn = min a (min b (min c d))
+          mx = max a (max b (max c d))
+
+minMax4 [a,b,c,d] = (min a (min b (min c d)), max a (max b (max c d))) 

@@ -1,0 +1,14 @@
+sumAll : {n, a} (fin n, fin a) => [n][a] -> [a]
+
+sumAll xs = ys ! 0
+    where ys = [0] # [ x + y | x <- xs
+                             | y <- ys 
+                     ]
+
+/* 
+
+sumAll [1 .. 5] 
+
+sumAll [15, 12, 9, 6, 3]:[64]
+
+*/

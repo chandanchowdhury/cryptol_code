@@ -1,0 +1,17 @@
+all : {n, a} (fin n) => (a -> Bit) -> [n]a -> Bit
+all f xs = [f x | x <- xs] == ~zero
+
+/*
+
+> all eqTen [1..10] where eqTen x = x == 10
+
+*/
+
+any : {n, a} (fin n) => (a -> Bit) -> [n]a -> Bit
+any f xs = [ f x | x <- xs ] != zero
+
+/*
+
+> any eqTen [1..10] where eqTen x = x == 10
+
+*/

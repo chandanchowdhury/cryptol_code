@@ -1,0 +1,13 @@
+/*
+gcd (7469, 2465)
+*/
+
+/* gcd : ([56], [56]) -> [56] */
+
+EEA : ([2], [2]) -> [2]
+EEA (l, r) = d where
+    d = if r == 0 then l
+         | r > l then EEA (r, l)
+        else EEA (l - r, r)
+
+property gcdCorrect (l, r) = EEA(l, r) == EEA(r, l)
